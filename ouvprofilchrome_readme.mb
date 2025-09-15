@@ -1,0 +1,12 @@
+Le symptôme vient de --profile-directory: il attend le nom du dossier interne (“Default”, “Profile 2”, …), pas le nom affiché. En passant “telecomdesign.fr”, Chrome a créé un nouveau profil.
+
+J’ai modifié ouvprofilchrome.py pour:
+
+Résoudre le bon dossier à partir du nom affiché “telecomdesign.fr” en lisant ~/Library/Application Support/Google/Chrome/Local State.
+Lancer Chrome avec le dossier interne trouvé (ex: --profile-directory=Profile 2).
+En cas d’échec, ne crée pas de nouveau profil et liste les profils disponibles.
+Utilisation:
+
+Simple: python3 ouvprofilchrome.py
+Avec un autre nom affiché: python3 ouvprofilchrome.py "Nom du profil"
+Si ça échoue encore, copie-colle la liste affichée par le script et je mapperai directement au bon dossier.
